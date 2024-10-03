@@ -1,0 +1,54 @@
+# Python
+*.py[cod]
+__pycache__/
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+.venv/
+# PyCharm
+.idea/
+*.iml
+# VSCode
+.vscode/
+# Jupyter Notebook
+.ipynb_checkpoints
+# Flask instance folder
+instance/
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+# Pytest
+.cache
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+# VSCode settings
+.settings/
+# Pyre type checker
+.pyre/
+# Miscellaneous
+*.log
+*.pot
+*.pyc
+*.pdb
+*.db
+*.sqlite3
+*.egg-info/
