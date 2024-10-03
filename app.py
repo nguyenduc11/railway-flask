@@ -3,11 +3,15 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
 from os import environ
+from flask_migrate import Migrate
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(
     'DATABASE_URL') or 'sqlite:///tasks.db'
 db = SQLAlchemy(app)
+
+migrate = Migrate(app, db)
 
 
 class Task(db.Model):
