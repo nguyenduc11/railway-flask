@@ -11,11 +11,12 @@ app = Flask(__name__)
 database_url = environ.get('DATABASE_URL')
 
 # Fix issue with SQLAlchemy's interpretation of 'postgresql' in the URL
-if database_url and database_url.startswith("postgres://"):
-    database_url = database_url.replace("postgres://", "postgresql://", 1)
+# if database_url and database_url.startswith("postgres://"):
+#     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
 # Fallback to SQLite if no DATABASE_URL is provided
-app.config['SQLALCHEMY_DATABASE_URI'] = database_url or 'sqlite:///tasks.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
+    'DATABASE_URL') or 'sqlite:///tasks.db'
 db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)
