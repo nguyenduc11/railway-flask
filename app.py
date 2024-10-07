@@ -15,8 +15,10 @@ database_url = environ.get('DATABASE_URL')
 #     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
 # Fallback to SQLite if no DATABASE_URL is provided
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-    'DATABASE_URL') or 'sqlite:///tasks.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
+#     'DATABASE_URL') or 'sqlite:///tasks.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
+
 db = SQLAlchemy(app)
 
 migrate = Migrate(app, db)
