@@ -19,6 +19,9 @@ class Task(db.Model):
     description = db.Column(db.Text)
 
 
+db.create_all()  # This will create all tables defined in your models
+
+
 @app.route('/')
 def index():
     tasks = Task.query.all()
